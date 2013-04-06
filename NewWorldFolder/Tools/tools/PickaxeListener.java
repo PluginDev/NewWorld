@@ -34,17 +34,14 @@ public class PickaxeListener implements Listener {
 		if (p.getEquipment().getChestplate() != null
 				&& p.getEquipment().getBoots() != null
 				&& p.getEquipment().getLeggings() != null) {
-			log.info("checkea que esta equipado");
 
 			if (p.getEquipment().getChestplate().getTypeId() == 299
 					&& p.getEquipment().getBoots().getTypeId() == 301
 					&& p.getEquipment().getLeggings().getTypeId() == 300) {
-				
-				log.info("checkea que tiene los cueros");
 
 				if (getLoreEnergy(p.getEquipment().getChestplate()
 						.getItemMeta().getLore()) > 0) {
-					log.info("checkea que tiene energia el traje");
+					
 
 					List<String> lore = p.getEquipment().getChestplate()
 							.getItemMeta().getLore();
