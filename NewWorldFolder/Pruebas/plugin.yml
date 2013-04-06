@@ -1,0 +1,6 @@
+name: Pruebas
+main: pruebas.Pruebas
+version: 1.0
+description: Test DB plugin
+author: Indeleble
+database: true
