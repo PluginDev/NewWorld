@@ -1,4 +1,4 @@
-package pruebas;
+package core;
 
 import java.util.List;
 import java.util.logging.Logger;

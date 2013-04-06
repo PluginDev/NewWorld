@@ -1,4 +1,4 @@
-package pruebas;
+package core;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

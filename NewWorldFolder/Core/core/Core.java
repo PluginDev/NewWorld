@@ -1,4 +1,4 @@
-package pruebas;
+package core;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -9,9 +9,12 @@ import javax.persistence.PersistenceException;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Pruebas extends JavaPlugin {
+public class Core extends JavaPlugin {
 
 	Logger log;
+	List<IndePlayer> IndePlayerList;
+
+	List<MulaPlayer> MulaPlayerList;
 
 	@Override
 	public void onEnable() {
@@ -30,6 +33,39 @@ public class Pruebas extends JavaPlugin {
 		// TODO Insert logic to be performed when the plugin is disabled
 	}
 
+	public List<IndePlayer> getIndePlayerList() {
+		return IndePlayerList;
+	}
+
+	public void setIndePlayerList(List<IndePlayer> indePlayerList) {
+		IndePlayerList = indePlayerList;
+	}
+
+	public void addIndePlayer(IndePlayer indePlayer) {
+		IndePlayerList.add(indePlayer);
+	}
+
+	public void removeIndePlayer(IndePlayer indePlayer) {
+
+		for (int i = 0; i < IndePlayerList.size(); i++) {
+
+			if (IndePlayerList.get(i).getId() == indePlayer.getId()) {
+
+				IndePlayerList.remove(i);
+				break;
+			}
+		}
+
+	}
+
+	public List<MulaPlayer> getMulaPlayerList() {
+		return MulaPlayerList;
+	}
+
+	public void setMulaPlayerList(List<MulaPlayer> mulaPlayerList) {
+		MulaPlayerList = mulaPlayerList;
+	}
+
 	private void setupDatabase() {
 		try {
 			getDatabase().find(IndePlayer.class).findRowCount();
@@ -42,11 +78,12 @@ public class Pruebas extends JavaPlugin {
 
 	@Override
 	public List<Class<?>> getDatabaseClasses() {// register database beans
-		
-		List<Class<?>> classes = new LinkedList<Class<?>>(); // add all beans 
+
+		List<Class<?>> classes = new LinkedList<Class<?>>(); // add all beans
 		classes.add(IndePlayer.class); // ... add other beans
+		classes.add(MulaPlayer.class);
 		// return the complete list
-		
+
 		return classes;
 	}
 }
