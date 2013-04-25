@@ -27,14 +27,12 @@ public class PlayerListener implements Listener {
 	@EventHandler
 	public void PlayerJoin(PlayerJoinEvent ev) {
 
-		// create a query that returns TestBean objects
 		Query<IndePlayer> query = pl.getDatabase().find(IndePlayer.class);
 		log.info("Ha encontrado la clase");
-		// execute the query
+		
 		List<IndePlayer> beans = query.findList();
 		log.info("Ha encontrado la lista");
 		
-
 		for (IndePlayer ip : beans) {
 			log.info("entra en bucle");
 			if (ip.getAccountName().compareToIgnoreCase(
@@ -45,7 +43,7 @@ public class PlayerListener implements Listener {
 			}
 
 			else {
-				log.info("Else");
+
 				IndePlayer ip2 = new IndePlayer();
 				ip2.setAccountName(ev.getPlayer().getName());
 				
@@ -66,9 +64,4 @@ public class PlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler
-	public void inv(InventoryClickEvent ev) {
-		Player p = (Player) ev.getWhoClicked();
-		p.sendMessage(String.valueOf(ev.getRawSlot()));
-	}
 }

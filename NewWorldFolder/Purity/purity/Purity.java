@@ -1,20 +1,19 @@
-package plugin;
+package purity;
 
 import java.util.logging.Logger;
 
+import listeners.CraftListener;
 import listeners.DropListener;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
 import tools.PickaxeListener;
-
 import armors.ArmorsListener;
 
 //import tools.PickaxeListener;
 
-public class Tools extends JavaPlugin {
+public class Purity extends JavaPlugin {
 
 	Logger log;
 
@@ -24,8 +23,9 @@ public class Tools extends JavaPlugin {
 		log = this.getLogger();
 
 		PluginManager pm = this.getServer().getPluginManager();
-		pm.registerEvents(new PickaxeListener(this), this);
-		pm.registerEvents(new ArmorsListener(this), this);
+
+		pm.registerEvents(new CraftListener(this), this);
+		pm.registerEvents(new DropListener(this), this);
 
 	}
 

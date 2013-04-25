@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -28,6 +27,7 @@ public class PickaxeListener implements Listener {
 	public void BlockBreak(BlockDamageEvent ev) {
 
 		Player p = ev.getPlayer();
+		
 
 		boolean active;
 
@@ -73,7 +73,7 @@ public class PickaxeListener implements Listener {
 
 	private List<String> reduceEnergy(List<String> lore) {
 
-		lore.set(0, "Energia: " + String.valueOf(getLoreEnergy(lore) - 10)
+		lore.set(0, "Energia: " + String.valueOf(getLoreEnergy(lore) - 1)
 				+ "%");
 
 		return lore;

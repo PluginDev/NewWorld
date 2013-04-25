@@ -77,12 +77,11 @@ public class Core extends JavaPlugin {
 	}
 
 	@Override
-	public List<Class<?>> getDatabaseClasses() {// register database beans
+	public List<Class<?>> getDatabaseClasses() {
 
-		List<Class<?>> classes = new LinkedList<Class<?>>(); // add all beans
-		classes.add(IndePlayer.class); // ... add other beans
+		List<Class<?>> classes = new LinkedList<Class<?>>();
+		classes.add(IndePlayer.class); 
 		classes.add(MulaPlayer.class);
-		// return the complete list
 
 		return classes;
 	}

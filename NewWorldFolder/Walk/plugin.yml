@@ -1,0 +1,16 @@
+name: Walk
+main: walk.Walk
+version: 1.0
+description: Not always run
+author: Indeleble
+commands:
+   run:
+      description: Run command.
+      usage: /run
+      permission: 
+      permission-message:
+   walk:
+      description: Walk command.
+      usage: /walk
+      permission: 
+      permission-message:

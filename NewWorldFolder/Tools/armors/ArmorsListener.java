@@ -25,11 +25,8 @@ public class ArmorsListener implements Listener {
 	@EventHandler
 	public void CraftArmorEvent(PrepareItemCraftEvent ev) {
 
+
 		if (ev.getInventory().getResult().getTypeId() == 299) {
-
-			// ItemStack armor = new ItemStack(299);
-
-			// ItemMeta im = armor.getItemMeta();
 
 			ItemStack armor = ev.getInventory().getResult();
 
