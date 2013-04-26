@@ -10,6 +10,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Core extends JavaPlugin {
+	
+	//Preytor es gay
 
 	Logger log;
 	List<IndePlayer> IndePlayerList;
